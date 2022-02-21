@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style >
+		
+		.{
+			margin: 0;
+			padding: 0;
+		}
+
+
+	</style>
+	<script>
+
+		function queryString(parameter) {  
+              var loc = location.search.substring(1, location.search.length);   
+              var param_value = false;   
+              var params = loc.split("&");   
+              for (i=0; i<params.length;i++) {   
+                  param_name = params[i].substring(0,params[i].indexOf('='));   
+                  if (param_name == parameter) {                                          
+                      param_value = params[i].substring(params[i].indexOf('=')+1)   
+                  }   
+              }   
+              if (param_value) {   
+                  return param_value;   
+              }   
+              else {   
+                  return undefined;   
+              }   
+        }
+        var str = " "
+		var nomeDoAluno = queryString("minhaVariavel")
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+		nomeDoAluno = nomeDoAluno.replace('%20',str)
+
+
+
+		
+		function registraAluno(){
+			nomeDoAluno = document.getElementById('nomeDoAluno1').value
+			if(typeof(Storage)!='undefined'){
+				if (localStorage.getItem(nomeDoAluno)) {
+					window.alert('Aluno Já cadastrado')
+				} else if(nomeDoAluno=="undefined"){
+					window.alert('Para cadastrar um aluno, é preciso informar um nome')
+				}
+
+
+				else{
+					localStorage.setItem(nomeDoAluno, ['0','0','0','0','0','0','0','0'] )
+					window.alert('Aluno cadastrado com sucesso')
+					}
+			}
+		}
+
+
+	</script>
+
+</head>
+<body>
+	<div align="center" style="background: white; color: #ffcc00;; width: 1340px; right: 10000px; margin: auto;">
+		<h1 align="center" style="font-family: 'Copperplate',Fantasy; color: #ff8c00; position: absolute; top: 8px; left: 500px;">Registrar Novo Aluno</h1>
+		<img align="left" src="logo_Codebuddy.png" width="200" style="margin-top: 0px; margin-left: 20px;">
+	<br><br><br><br><br>
+	<hr>
+	</div>
+<div style="background: #2c479e; right: 3000px; width: 100%;">
+	
+	<div  align="center" ><br><br><br><br><br>
+		<input style="border-radius: 8px; border-color: gray; width: 230px; " type="text" name="" id="nomeDoAluno1" placeholder="Informe o nome completo do Aluno">
+		<button style="border-radius: 8px; border-color: gray; width: 230px; " onclick="registraAluno()">Registrar Aluno</button>
+		<a href="paginaRegisto.html"><button style="border-radius: 8px; border-color: gray; width: 230px; "> Voltar</button></a>
+
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<script>
+		
+		document.getElementById('nomeDoAluno1').value = nomeDoAluno
+	</script>
+</body>
+</html>

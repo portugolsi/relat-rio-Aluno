@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registro do Aluno</title>
+	<meta charset="utf-8">
+
+	<script>
+		
+
+	</script>
+	<script >
+		
+
+		
+
+		
+
+	</script>
+	<style type="text/css">
+			
+
+
+			body{
+
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0px!important;
+
+}
+.stilo{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0px!important;
+
+}
+h1{
+	font-family: 'Copperplate',Fantasy;
+	color: #f7941e;
+	padding-top: 0px;
+
+}
+		</style>
+
+
+</head>
+
+	
+	<body align="center" style="background: #ff8c00; right: 100%; width: 100%; margin: 0 auto;">
+	<div style="background: white; color: #ffcc00; width: 100%; right: 10000px; margin: 0 auto;" class="stilo">
+		<div style="width: 50%%;" ><img style="padding: 15px;" align="left" src="logo_Codebuddy.png" width="200" >
+
+		</div>
+
+
+		<div style="width: 80%; padding-top: 20px;" >		<h1  align="center">Pagina de registro</h1>
+		</div>
+		
+		<br>
+		<hr>
+	</div>		
+	
+	<div style=" font-family: 'Lucida Console',Monospace; ">
+		<br>
+
+
+		<input type="text" name="" id="nomeDoAluno" placeholder="Informe o nome completo do Aluno"  style="width: 250px; border-radius: 20px; padding-left: 15px; background-image: url('Pesquisar.png'); background-repeat: no-repeat; background-position: 95%; background-size: 5%">
+
+		<button style="border-radius: 20px; background: #0000cc; color: white;" onclick="pesquisarAluno()">Pesquisar Aluno</button>
+
+		<button style="border-radius: 20px;  background: #0000cc; color: white;" onclick="passaValorCadastrar(document.getElementById('nomeDoAluno').value)">Registrar Aluno</button>
+		<button style="border-radius: 20px;  background: #0000cc; color: white;" onclick="gerarRelatorios(document.getElementById('nomeDoAluno').value)">Gerar Relatório</button>
+		<button style="border-radius: 20px;  background: #0000cc; color: white;" onclick="excluirAluno()">Excluir Aluno</button>
+		
+	</div  >	
+		<script type="text/javascript">
+			
+			function excluirAluno(){
+				var nomeDoAluno = document.getElementById('nomeDoAluno').value
+				if (localStorage.getItem(nomeDoAluno)) {
+					exclui = window.alert('Você realmente deseja excluir o Aluno '+nomeDoAluno+'?')
+					if (true) {
+						localStorage.removeItem(nomeDoAluno)
+					}
+				}else{
+					//window.location.href = 'AlunoNaoEncontrado.html'
+
+					window.alert('Aluno Não Encontrado')	
+				}
+
+
+
+			}
+			
+
+			function pesquisarAluno(){
+				var cont = 0
+				var nomeDoAluno = document.getElementById('nomeDoAluno').value
+
+				//for (var i = 0; i < alunos.length; i++) {
+					
+				//	if (nomeDoAluno == alunos[i]){
+
+				//		console.log('Aluno Existe')
+				//		cont= cont-5
+				//		window.location.href = 'FazerRelatorio.html?minhaVariavel='+nomeDoAluno
+				//	}
+				//	cont+=1	
+				//}	
+				
+				//if (cont==alunos.length){
+				//	console.log('Aluno Inexistente')
+				//	window.location.href = 'AlunoNaoEncontrado.html'
+				//}
+				if (localStorage.getItem(nomeDoAluno)) {
+					window.location.href = 'FazerRelatorio.html?minhaVariavel='+nomeDoAluno
+				}else{
+					//window.location.href = 'AlunoNaoEncontrado.html'
+
+					window.alert('Aluno Não Encontrado')	
+				}
+				
+
+			
+		}
+
+
+		function passaValorCadastrar(valor)
+					{
+					    window.location = "cadastrarAluno.html?minhaVariavel="+valor;
+					}
+
+
+
+		function gerarRelatorios(valor){
+			var nomeDoAluno = document.getElementById('nomeDoAluno').value
+			if (localStorage.getItem(nomeDoAluno)) {
+					window.location = "pagGerarRelatorio.html?minhaVariavel="+valor;
+					console.log('deu certo')
+				}else{
+					//window.location.href = 'AlunoNaoEncontrado.html'
+
+					window.alert('Aluno Não Encontrado')	
+				}
+			
+
+
+
+		}			
+
+		</script>
+
+		
+		
+		
+
+
+	</body>
+</html>

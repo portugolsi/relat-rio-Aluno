@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style >
+    
+    .{
+      margin: 0;
+      padding: 0;
+    }
+    header{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-family: pantom, regular;
+    }
+
+
+  </style>
+</head>
+<body>
+  <script >
+  
+  function queryString(parameter) {  
+              var loc = location.search.substring(1, location.search.length);   
+              var param_value = false;   
+              var params = loc.split("&");   
+              for (i=0; i<params.length;i++) {   
+                  param_name = params[i].substring(0,params[i].indexOf('='));   
+                  if (param_name == parameter) {                                          
+                      param_value = params[i].substring(params[i].indexOf('=')+1)   
+                  }   
+              }   
+              if (param_value) {   
+                  return param_value;   
+              }   
+              else {   
+                  return undefined;   
+              }   
+        }
+    var str = " "
+    var nomeDoAluno = queryString("minhaVariavel")
+
+    nomeDoAluno = nomeDoAluno.replace('%20',str)
+    nomeDoAluno = nomeDoAluno.replace('%20',str)
+    nomeDoAluno = nomeDoAluno.replace('%20',str)
+    nomeDoAluno = nomeDoAluno.replace('%20',str)
+    nomeDoAluno = nomeDoAluno.replace('%20',str)
+    nomeDoAluno = nomeDoAluno.replace('%20',str)
+
+    console.log(nomeDoAluno)
+
+    function resultados(){
+  
+          console.log(localStorage.getItem(nomeDoAluno))
+          todosValores = localStorage.getItem(nomeDoAluno).split(',')
+          v1 = parseInt(todosValores[0])/parseInt(todosValores[7])
+          v2 =  parseInt(todosValores[1])/parseInt(todosValores[7])
+          v3 = parseInt(todosValores[2])/parseInt(todosValores[7])
+          v4 =  parseInt(todosValores[3])/parseInt(todosValores[7])
+          v5 = parseInt(todosValores[4])/parseInt(todosValores[7])
+          v6 = parseInt(todosValores[5])/parseInt(todosValores[7])
+          v7 = parseInt(todosValores[6])/parseInt(todosValores[7])
+
+          Media = parseInt(v1+v2+v3+v4+v5+v6+v7)/7
+           
+      if (v1>1 && v1<=2) {
+        v1="D"
+      }else 
+      if (v1>=2 && v1<3) {
+        v1="C"
+      }else 
+      if (v1>=3 && v1<3.5) {
+        v1="B"
+      }else {
+        v1="A"
+      }
+
+      
+      if (v2>1 && v2<=2) {
+        v2="D"
+      }else 
+      if (v2>=2 && v2<3) {
+        v2="C"
+      }else 
+      if (v2>=3 && v2<3.5) {
+        v2="B"
+      }else {
+        v2="A"
+      }
+      
+      
+
+      if (v3>1 && v3<=2) {
+        v2="D"
+      }else 
+      if (v3>=2 && v3<3) {
+        v2="C"
+      }else 
+      if (v3>=3 && v3<3.5) {
+        v3="B"
+      }else {
+        v3="A"
+      }
+
+
+      
+
+     if (v4>1 && v4<=2) {
+        v4="D"
+      }else 
+      if (v4>=2 && v4<3) {
+        v4="C"
+      }else 
+      if (v4>=3 && v4<3.5) {
+        v4="B"
+      }else {
+        v4="A"
+      }
+
+      
+      if (v5>1 && v5<=2) {
+        v5="D"
+      }else 
+      if (v5>=2 && v5<3) {
+        v5="C"
+      }else 
+      if (v5>=3 && v5<3.5) {
+        v5="B"
+      }else {
+        v5="A"
+      }
+      
+      if (v6>1 && v6<=2) {
+        v6="D"
+      }else 
+      if (v6>=2 && v6<3) {
+        v6="C"
+      }else 
+      if (v6>=3 && v6<3.5) {
+        v6="B"
+      }else {
+        v6="A"
+      }
+      
+      if (v7>1 && v7<=2) {
+        v7="D"
+      }else 
+      if (v7>=2 && v7<3) {
+        v7="C"
+      }else 
+      if (v7>=3 && v7<3.5) {
+        v7="B"
+      }else {
+        v7="A"
+      }
+
+      if (Media>1 && Media<=2) {
+        Media="D"
+      }else 
+      if (Media>2 && Media<3) {
+        media="C"
+      }else 
+      if (Media>=3 && Media<3.5) {
+        Media="B"
+      }else {
+       Media="A"
+      }
+      
+
+       console.log('deu certo')
+    document.write('<h3>Engaja-se nas atividades e eventos realizados na codeBuddy: '+v1+' </h3> <br>')
+    document.write('<h3>Executa bem a ferramenta estudada:'+v2+'  </h3> <br>')
+    document.write('<h3>Executa as atividades em uma ordem lógica: '+v3+ ' </h3> <br>')
+    document.write('<h3>Apresenta  capacidade de identificar e lidar com erros: '+v4+' </h3> <br>')
+    document.write('<h3>Demonstra capacidade de solucionar problemas: '+v5+' </h3> <br>')
+    document.write('<h3>Tem autonomia para desenvolver as atividades propostas: '+v6+' </h3> <br>')
+    document.write('<h3>Ambiente de aula, equipamentos e conectividade nas aulas online: '+v7+' </h3> <br>')
+    document.write('<h3>Classificação do Aluno: '+Media+' </h3>')
+
+
+    }
+
+
+
+    
+
+</script>
+
+
+  <div style="background: #0000cc; color: #ffcc00;; width: 1340px; right: 10000px; margin: auto; font-family: Cambria, Arial;"><br>
+    <img src="logo_Codebuddy.png" width="200">
+    <script >
+      document.write('<h1 align="center">Relatório de '+ nomeDoAluno+'  </h1>')
+  
+    </script>
+  
+     
+    <br>
+    <hr>
+  </div>
+
+  <div style="background: #ff8c00; right: 3000px; width: 1340px; ">
+      
+      <script >
+        
+
+
+
+    resultados()
+   
+
+      </script>
+
+
+  </div>
+
+
+  <a href="paginaRegisto.html"><button style="border-radius: 20px;">Voltar</button></a>
+
+
+
+
+
+</body>
+</html>
